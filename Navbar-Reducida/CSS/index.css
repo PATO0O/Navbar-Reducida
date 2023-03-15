@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --color-azul-oscuro: #22468d;
+  --color-azul-medio: #0058af;
+  --color-azul-claro: #66ccff;
+  --color-azul-muy-claro: #cce5ff;
+  --color-gris-claro: #e0e0e0;
+  --color-blanco: #ffffff;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  background-color: var(--color-azul-medio);
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar li {
+  padding: 5px;
+}
+
+.navbar li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 0;
+  padding-top: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+.navbar li a:hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 9px;
+  left: 0;
+  background-color: #fff;
+  visibility: visible;
+  transform: scaleX(1);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.navbar li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out 0s;
+}
+
+/* Estilos para el logo */
+.logo-container {
+  width: 30px;
+  height: 30px;
+  padding-left: 3vh;
+  padding-top: 3vh;
+  overflow: hidden;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para el overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 72, 214, 0.116);
+  display: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
